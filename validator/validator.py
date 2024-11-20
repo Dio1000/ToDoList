@@ -4,7 +4,7 @@ from utils.utils import *
 
 
 def add_validator(argc: int):
-    if argc <= 4:
+    if argc < 4:
         print("Too few arguments were provided for 'add'!")
         return 0
 
