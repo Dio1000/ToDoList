@@ -3,6 +3,7 @@ import os
 
 def create_file(file_path: str):
     if os.path.isfile(file_path):
+        print("File already exists!")
         return 0
 
     with open(file_path, "w"):
@@ -13,6 +14,9 @@ def create_file(file_path: str):
 def remove_file(file_path: str):
     if os.path.exists(file_path):
         os.remove(file_path)
+        return
+
+    print("File doest not exist!")
 
 
 def write_to_file(file_path: str, line: str):

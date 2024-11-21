@@ -30,5 +30,3 @@ def valid_date(date: str):
     year = tokens[2]
 
     return valid_date_integer(day, 2) and valid_date_integer(month, 2) and valid_date_integer(year, 4)
-
-

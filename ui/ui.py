@@ -8,6 +8,10 @@ max_task = 0
 max_date = 0
 
 
+def display_help():
+    display_tasks("lists/Help", "Help")
+
+
 def display_tasks(file_path: string, list_name: string):
     global max_length, max_task, max_date
     lines = get_lines_from_file(file_path)
@@ -47,16 +51,16 @@ def display_empty_row(length: int):
 
 
 def display_in_middle(length: int, line: str):
-    formula = int((offset * 2 + length + len(line) / 2) / 2)
+    formula = 2 + (offset * 2 + length)
     display = "|"
 
     index = 1
-    while index < formula:
+    while index < (formula - offset) / 2:
         display += " "
         index += 1
     display += line
 
-    while index < (offset * 2 + length) - 1:
+    while index < formula - len(line) - 1:
         display += " "
         index += 1
     display += "|"
