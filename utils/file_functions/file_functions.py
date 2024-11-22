@@ -27,6 +27,14 @@ def write_to_file(file_path: str, line: str):
     write_file.close()
 
 
+def write_notnull_to_file(file_path: str, line: str):
+    with open(file_path, "a") as write_file:
+        line = line.strip(" ")
+        write_file.write(line + "\n")
+
+    write_file.close()
+
+
 def remove_row_from_file(file_path: str, row: int):
     with open(file_path, "r") as read_file:
         lines = read_file.readlines()

@@ -1,7 +1,6 @@
 from utils.utils import *
 from utils.file_functions.file_functions import *
 
-
 def add_validator(argc: int, argv: list):
     if argc < 4:
         print("Too few arguments were provided for 'add'!")
@@ -15,6 +14,25 @@ def add_validator(argc: int, argv: list):
 
 
 def dl_validator(argc: int, argv: list):
+    if argc < 5:
+        print("Too few arguments were provided for 'dl'!")
+        return 0
+    elif argc > 5:
+        print("Too many arguments were provided for 'dl'!")
+        return 0
+
+    if not os.path.isfile("lists/" + argv[2]):
+        print(argv[2] + " is not a valid list!")
+        return 0
+
+    if not valid_date(argv[4]):
+        print("Deadline is not a valid date! Use format dd/MM/yyyy!")
+        return 0
+
+    return 1
+
+
+def awd_validator(argc: int, argv: list):
     if argc < 5:
         print("Too few arguments were provided for 'dl'!")
         return 0

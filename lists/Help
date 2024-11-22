@@ -1,5 +1,6 @@
 add - Adds a task passed as an argument to a given list,add <list> <task>
 dl - Adds a deadline to a task in a given list,dl <list> <row> <deadline>
+awd - Adds a task and sets a deadline in a given list, awd <list> "<task>" "<deadline>"
 mklist - Creates a new list to store tasks in,mklist <list>
 rmlist - Removes a list and all the tasks stored in it,rmlist <list>
 rmrow - Removes a row from a list,rmrow <list> <row>

@@ -13,6 +13,8 @@ def execute_program(argc: int, argv: list):
         execute_add(argv)
     if argument == "dl" and dl_validator(argc, argv):
         execute_dl(argv)
+    if argument == "awd" and awd_validator(argc, argv):
+        execute_awd(argv)
     if argument == "rmrow" and rmrow_validator(argc, argv):
         execute_rmrow(argv)
     if argument == "rmline" and rmline_validator(argc, argv):
@@ -38,6 +40,13 @@ def execute_dl(argv: list):
     row = int(argv[3])
     new_line = argv[4]
     add_deadline_to_row(file_path, row, new_line)
+
+
+def execute_awd(argv: list):
+    file_path = "lists/" + argv[2]
+    task = argv[3]
+    deadline = argv[4]
+    write_notnull_to_file(file_path, task + "," + deadline)
 
 
 def execute_rmrow(argv: list):
